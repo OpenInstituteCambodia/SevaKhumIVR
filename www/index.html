@@ -1,0 +1,301 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN"
+    "http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd">
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/normalize.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script src="lib/ngCordova/dist/ng-cordova.min.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+    <script src="js/datetime.config.js"></script>
+    <script src="js/routes.js"></script>
+    <script src="js/directives.js"></script>
+    <script src="js/player.js"></script>
+</head>
+<body ng-app="selfivr" ng-controller="MainCtrl" ng-strict-di>
+    <!-- Application container -->
+    <div class="app-container" ng-class="style">
+        <ion-nav-bar class="bar">
+            <ion-nav-back-button class="button-clear"></ion-nav-back-button>
+            <ion-nav-title></ion-nav-title>
+        </ion-nav-bar>
+        <ion-nav-view></ion-nav-view>
+        <ion-footer-bar class="bar">
+<!--            <a ui-sref="reminder" class="fbutton reminder"><span class="ion-clock"></span></a>-->
+            <a ng-click="exit()" class="fbutton exit"><span class="ion-power"></span></a>
+        </ion-footer-bar>
+    </div>
+
+    <!-- Application page -->
+    <script type="text/ng-template" id="main.html">
+        <ion-view title="ស្វាគមន៍"><ion-content>
+            <si-page sound="Msg1.1.mp3">
+                <a href="#page/page2.html"><button class="button button-block button-positive">១.​ សេវារដ្ឋបាលឃុំសង្កាត់</button></a>
+                <a href="#page/page3.html"><button class="button button-block button-positive">២. សេវានគរបាលរដ្ឋបាលឃុំសង្កាត់</button></a>
+            </si-page>
+        </ion-content></ion-view>
+    </script>
+
+    <script type="text/ng-template" id="page2.html">
+        <ion-view title="សេវា​រដ្ឋបាល​ឃុំ​សង្កាត់"><ion-content>
+            <si-page sound="Msg2.mp3">
+                <a href="#page/page2_1.html"><button class="button button-block button-positive">១. ​ការងារអត្រានុកូលដ្ឋាន</button></a>
+                <a href="#page/page2_2.html"><button class="button button-block button-positive">២. ការចេញលិខិតអនុញ្ញាតិ</button></a>
+            </si-page>
+        </ion-content></ion-view>
+    </script>
+
+    <script type="text/ng-template" id="page2_1.html">
+        <ion-view title="ការងារ​អត្រានុកូលដ្ឋាន"><ion-content>
+            <si-page sound="Msg2.1.mp3">
+                <a href="#page/page2_1_1.html"><button class="button button-block button-positive">១. សេវាសំបុត្រកំណើត</button></a>
+                <a href="#page/page2_1_2.html"><button class="button button-block button-positive">២. សំបុត្រអាពាហ៍ពិពាហ៍</button></a>
+                <a href="#page/page2_1_3.html"><button class="button button-block button-positive">៣. សំបុត្រមរណភាព</button></a>
+            </si-page>
+        </ion-content></ion-view>
+    </script>
+
+    <script type="text/ng-template" id="page2_1_1.html">
+        <ion-view title="សេវា​សំបុត្រ​កំណើត"><ion-content>
+            <si-page sound="Msg2.1.1.mp3">
+                <a href="#page/page2_1_1_1.html"><button class="button button-block button-positive">១. សំបុត្រកំណើត</button></a>
+                <a href="#page/page2_1_1_2.html"><button class="button button-block button-positive">២. សំបុត្របញ្ជាក់កំណើត</button></a>
+                <a href="#page/page2_1_1_3.html"><button class="button button-block button-positive">៣. សេចក្តីចម្លងសំបុត្រកំណើត</button></a>
+            </si-page>
+        </ion-content></ion-view>
+    </script>
+
+    <script type="text/ng-template" id="page2_1_2.html">
+        <ion-view title="សំបុត្រ​អាពាណ៌ពិពាណ៍"><ion-content>
+            <si-page sound="Msg2.1.2.mp3">
+                <a href="#page/page2_1_2_1.html"><button class="button button-block button-positive">១. បណ្ណ័ប្រកាសអាពាហ៍ពិពាហ៍</button></a>
+                <a href="#page/page2_1_2_2.html"><button class="button button-block button-positive">២. សំបុត្រអាពាហ៍ពិពាហ៍ </button></a>
+                <a href="#page/page2_1_2_3.html"><button class="button button-block button-positive">៣. សេចក្តីចម្លងសំបុត្រអាពាហ៍ពិពាហ៍</button></a>
+            </si-page>
+        </ion-content></ion-view>
+    </script>
+
+    <script type="text/ng-template" id="page2_1_3.html">
+        <ion-view title="សំបុត្រ​មរណភាព"><ion-content>
+            <si-page sound="Msg2.1.3.mp3">
+                <a href="#page/page2_1_3_1.html"><button class="button button-block button-positive">១. សំបុត្រមរណភាព</button></a>
+                <a href="#page/page2_1_3_2.html"><button class="button button-block button-positive">២. សេចក្តីចម្លងសំបុត្រមរណភាព</button></a>
+            </si-page>
+        </ion-content></ion-view>
+    </script>
+
+    <script type="text/ng-template" id="page2_1_1_1.html">
+        <ion-view title="សំបុត្រ​កំណើត"><ion-content padding="true">
+            <div ng-init="content_descs=[{item: 'ការ​ផ្តល់​សេវា​សំបុត្រ​កំណើត​គឺ​មិន​យក​កម្រៃ​ទេ​ក្នុង​អំឡុង​ពេល​៣០​ថ្ងៃ​បន្ទាប់​ពី​កើត​។​ ការ​ស្នើ​សុំ​សេវា​នេះ​នឹង​ត្រូវ​ចំណាយ​រយៈ​ពេល​យ៉ាង​យូរ​៣​ថ្ងៃ​នៃ​ថ្ងៃ​ធ្វើ​ការ​។​ អ្នក​ស្នើ​សុំ​ត្រូវ​ភ្ជាប់​ជា​មួយ​នូវ​៖​'}, {item: '- ​លិខិត​ទទួល​ស្គាល់​កំណើត​ចេញ​ដោយ​មណ្ឌល​សុខភាព​ មន្ទីរ​ពេទ្យ​ ឬ​មេភូមិ​'}, {item: '- ​សៀវ​ភៅ​គ្រួសារ​ ឬ​សៀវភៅ​ស្នាក់​នៅ​ដែល​មាន​ឈ្មោះ​ឪពុក​ម្តាយ​ទារក​។​'}, {item: '- ​សេចក្តី​ចម្លង​សំបុត្រ​អាពាហ៍ពិពាហ៍​ ឬ​សេចក្តី​ចម្លង​បញ្ជាក់​សំបុត្រ​អាពាហ៍ពិពាហ៍​ របស់​ឪពុក​ម្តាយ​ទារក​បើ​មាន​។'}]"></div>
+            <si-media sound="Msg2.1.1.1.mp3"></si-media>
+        </ion-content></ion-view>
+    </script>
+
+    <script type="text/ng-template" id="page2_1_1_2.html">
+        <ion-view title="សំបុត្រ​បញ្ជាក់​កំណើត"><ion-content padding="true">
+            <div ng-init="content_descs=[{item: 'ការ​ធ្វើ​សេវា​សំបុត្រ​បញ្ជាក់​កំណើត​នឹង​ត្រូវ​បង់​ថ្លៃ​សេវា​ចំនួន​ ១០០០០​ (១​ម៉ឺន​រៀល​)  ការ​ស្នើ​សុំ​សំបុត្រ​នេះ​នឹង​ត្រូវ​ចំណាយ​រយៈ​ពេល​យ៉ាង​យូរ​៣​ថ្ងៃ​នៃ​ថ្ងៃ​ធ្វើ​ការ​។​អ្នក​ស្នើ​សុំ​ត្រូវ​ភ្ជាប់​ជា​មួយ​នូវ​៖​'}, {item: '-​ លិខិត​ទទួល​ស្គាល់​កំណើត​ចេញ​ដោយ​មណ្ឌល​សុខភាព​ មន្ទីរ​ពេទ្យ​ ឬ​មេភូមិ​(បើមាន)​'}, {item: '-​ សៀវ​ភៅ​គ្រួសារ​ ឬ​សៀវភៅ​ស្នាក់​នៅ​ដែល​មាន​ឈ្មោះ​ឪពុក​ម្តាយ​ទារក​។'}, {item: '-​ សេចក្តី​ចម្លង​សំបុត្រ​អាពាហ៍ពិពាហ៍​ ឬ​សេចក្តី​ចម្លង​បញ្ជាក់​សំបុត្រ​អាពាហ៍ពិពាហ៍​ របស់​ឪពុក​ម្តាយ​ (បើមាន)។'}, {item: '-​ ពាក្យ​បណ្តឹង​សុំ​ចុះ​អត្រា​នុកូលដ្ឋាន​បញ្ជាក់​កំណើត​'}]"></div>
+            <si-media sound="Msg2.1.1.2.mp3"></si-media>
+        </ion-content></ion-view>
+    </script>
+
+    <script type="text/ng-template" id="page2_1_1_3.html">
+        <ion-view title="សេចក្ដី​ចម្លង​សំបុត្រ​កំណើត"><ion-content padding="true">
+            <div ng-init="content_descs=[{item: 'ការ​ធ្វើ​សេវា​សេចក្តី​ចម្លង​សំបុត្រ​កំណើត​ នឹង​ត្រូវ​បង់​ថ្លៃ​សេវា​ចំនួន​៣០០០​ (៣​ពាន់រៀល​) ក្នុង​១​សន្លឹក​ ហើយ​ត្រូវ​ចំណាយ​រយៈ​ពេល​យ៉ាង​យូរ​៣​ថ្ងៃ​នៃ​ថ្ងៃ​ធ្វើ​ការ។​អ្នក​ស្នើ​សុំ​ត្រូវ​ភ្ជាប់​ជា​មួយ​នូវ៖​'}, {item: '-​ សំបុត្រ​កំណើត​ ឬ​សំបុត្រ​បញ្ជាក់​កំណើត​ច្បាប់​ដើម។'}]"></div>
+            <si-media sound="Msg2.1.1.3.mp3"></si-media>
+        </ion-content></ion-view>
+    </script>
+
+    <script type="text/ng-template" id="page2_1_2_1.html">
+        <ion-view title="ប័ណ្ណ​ប្រកាស​អាពាហ៍ពិពាហ៍"><ion-content padding="true">
+            <div ng-init="content_descs=[{item: 'ការ​ធ្វើ​ប័ណ្ណ​ប្រកាស​អាពាហ៍ពិពាហ៍​នឹង​ត្រូវ​បង់​ថ្លៃ​សេវា​ចំនួន​៣០០០​ (បីពាន់​រៀល​) ក្នុង​១​សន្លឹក​ ហើយ​ត្រូវ​ចំណាយ​រយៈ​ពេល​យ៉ាង​យូរ​៣​ថ្ងៃ​នៃ​ថ្ងៃ​ធ្វើ​ការ។​អ្នក​ស្នើសុំ​ត្រូវ​ភ្ជាប់​ជាមួយ​នូវ៖​'}, {item: '- សេចក្តី​ចម្លង​សំបុត្រ​កំណើត​ ឬ​សេចក្តី​ចម្លង​សំបុត្រ​បញ្ជាក់​កំណើត​'}, {item: '- លិខិត​បញ្ជាក់​ភាព​នៅ​លីវ​ ឬ​ម៉េ​ម៉ាយ​ ឬ​ពោះ​ម៉ាយ​ ដោយ​មាន​បិទ​រូបថត​របស់​សាមី​ខ្លួន​ទាំង២​'}, {item: '- សៀវភៅ​គ្រួសារ​ដែល​មាន​ទិន្នន័យ​អ្នក​ទាំង​២ (បើមាន)​'}, {item: '- ពាក្យស្នើ​សុំ​រៀបអាពាហ៍ពិពាហ៍​របស់​សាម៉ី​ខ្លួន​'}]"></div>
+            <si-media sound="Msg2.1.2.1.mp3"></si-media>
+        </ion-content></ion-view>
+    </script>
+
+    <script type="text/ng-template" id="page2_1_2_2.html">
+        <ion-view title="សំបុត្រ​អាពាហ៍ពិពាហ៍"><ion-content padding="true">
+            <div ng-init="content_descs=[{item: 'ក្រោយ​១០ថ្ងៃ​នែ​ការ​បិទ​ផ្សាយ​ជា​សាធារណៈ​នៃ​ប័ណ្ណ​ប្រកាស​អាពាហ៍ពិពាហ៍​បើ​គ្មាន​ការ​ប្តឹង​ជំទាស់​ពី​អាពាហ៍ពិពាហ៍​នេះ​ទេ​ ការ​ចុះ​សំបុត្រ​អាពាហ៍ពិពាហ៍​នឹង​អាច​ធ្វើ​ទៅ​បាន។​ ការ​ធ្វើ​សំបុត្រ​នេះ​ ត្រូវ​បង់​ថ្លៃ​សេវា​ចំនួន​១៥០០០​ (១ម៉ឺន​៥ពាន់រៀល​) ក្នុង​១សន្លឹក​ សម្រាប់​ពលរដ្ឋ​ខ្មែរ​រៀបការ​ជាមួយ​ពលរដ្ឋ​ខ្មែរ​ ហើយ​ ៣០០០០​ (៣ម៉ឺនរៀល)​ សម្រាប់​ពលរដ្ឋ​ខ្មែរ​ រៀបការ​ជាមួយ​ជនបរទេស។​ រយៈពេល​នៃ​ការ​ផ្តល់​សេវា​គឺ​យ៉ាង​យូរ​៣ថ្ងៃ​នៃ​ថ្ងៃធ្វើការ។​ អ្នក​ស្នើ​សុំ​ត្រូវ​ភ្ជាប់​ជាមួយ​នូវ៖​'}, {item: '- សាក្សី​២រូប​មិនមែន​ជា​សាច់ញាតិ​ និង​ជា​នីតិជន​ដោយ​ភ្ជាប់​មក​ជាមួយ​នូវ​សៀវភៅ​គ្រួសារ​ឬ​សៀវភៅ​ស្នាក់​នៅ​ ឬអត្តសញ្ញាណប័ណ្ណ​សញ្ជាតិខ្មែរ​របស់​ពួកគេ។​'}, {item: '- សំបុត្រ​បញ្ជាក់​កំណើត​របស់​សាម៉ី​ខ្លួនទាំង២​'}, {item: '- ប័ណ្ណ​ប្រកាស​អាពាហ៍ពិពាហ៍​'}]"></div>
+            <si-media sound="Msg2.1.2.2.mp3"></si-media>
+        </ion-content></ion-view>
+    </script>
+
+    <script type="text/ng-template" id="page2_1_2_3.html">
+        <ion-view title="សេចក្ដី​ចម្លង​សំបុត្រ​អាពាហ៍ពិពាហ៍"><ion-content padding="true">
+            <div ng-init="content_descs=[{item: 'សេចក្តី​ចម្លង​សំបុត្រ​អាពាហ៍ពិពាហ៍​ ត្រូវ​បង់​ថ្លៃ​សេវា​ចំនួន​​៣០០០ (៣ពាន់រៀល)​ ក្នុង​១សន្លឹក​ រយៈ​ពេលនៃ​ការ​ផ្តល់​សេវា​គឺ​៣ថ្ងៃ​នៃ​ថ្ងៃ​ធ្វើការ។​ '}, {item: 'អ្នក​ស្នើ​សុំ​ត្រូវភ្ជាប់​ជាមួយ​នូវ៖​'}, {item: '- សំបុត្រ​អាពាហ៍ពិពាហ៍​ ឬសំបុត្របញ្ជាក់អាពាហ៍ពិពាហ៍​ច្បាប់ដើម​'}]"></div>
+            <si-media sound="Msg2.1.2.3.mp3"></si-media>
+        </ion-content></ion-view>
+    </script>
+
+    <script type="text/ng-template" id="page2_1_3_1.html">
+        <ion-view title="សំបុត្រ​មរណភាព"><ion-content padding="true">
+            <div ng-init="content_descs=[{item: 'សេវា​សំបុត្រ​មរណភាព​គឺ​មិន​យក​កម្រៃ​ទេ​ក្នុង​អំឡុង​ពេល​១៥ថ្ងៃ​បន្ទាប់​ពីថ្ងៃ​ ទទួល​មរណភាព។​ បើ​លើស​ពី១៥ថ្ងៃ​ត្រូវដាក់​ពាក្យ​បណ្តឹង​សុំ​សំបុត្រមរណភាព​ពីឃុំសង្កាត់។​ បើលើសពី១ឆ្នាំ​ត្រូវ​សុំសាលក្រម​ពីសាលា​តំបូងរាជធានីខេត្ត។​ ការ​ស្នើសុំ​សំបុត្រ​នេះ​នឹងត្រូវ​ចំណាយ​រយៈពេល​យ៉ាង​យូរ​៣ថ្ងៃ​នៃថ្ងៃ​ធ្វើការ។​ អ្នក​ស្នើសុំ​ត្រូវ​ភ្ជាប់​ជាមួយនូវ៖​'}, {item: '- លិខិត​ជូនដំណឹង​មរណភាព​'}, {item: '- សៀវភៅ​គ្រួសារ​ដែលមាន​ឈ្មោះ​អ្នកស្លាប់​ក្នុង​នោះ​(បើមាន)​'}, {item: '- សេចក្តី​ចម្លង​សំបុត្រ​កំណើត​ឬ​សេចក្តី​ចម្លង​សំបុត្រ​បញ្ជាក់​កំណើត​របស់​អ្នកស្លាប់​'}]"></div>
+            <si-media sound="Msg2.1.3.1.mp3"></si-media>
+        </ion-content></ion-view>
+    </script>
+
+    <script type="text/ng-template" id="page2_1_3_2.html">
+        <ion-view title="សេចក្ដី​ចម្លង​សំបុត្រ​មរណភាព"><ion-content padding="true">
+            <div ng-init="content_descs=[{item: 'សេចក្តី​ចម្លង​សំបុត្រមរណភាព​ នឹង​ត្រូវ​បង់ថ្លៃ​សេវា​ចំនួន​៣០០០​ (បីពាន់រៀល)​ ក្នុង​១សន្លឹក​ ហើយ​ត្រូវ​ចំណាយ​រយៈ​ពេល​យ៉ាងយូរ​៣ថ្ងៃ​នៃថ្ងៃធ្វើការ។​ការ​ស្នើសុំ​ត្រូវភ្ជាប់​មកជាមួយនូវ៖​'}, {item: '- លិខិត​ជូន​ដំណឹងមរណភាព​'}, {item: '- សៀវភៅ​គ្រួសារ​ដែលមាន​ឈ្មោះ​អ្នកស្លាប់​ក្នុងនោះ(បើមាន)​'}, {item: '- សេចក្តី​ចម្លង​សំបុត្រ​កំណើត​ឬ​សេចក្តី​ចម្លង​សំបុត្រ​បញ្ជាក់​កំណើត​របស់​អ្នក​ស្លាប់​'}, {item: '- សៀវភៅ​គ្រួសារ​ឬ​សេចក្តី​ចម្លង​សំបុត្រ​កំណើត​ឬ​សេចក្តី​ចម្លង​សំបុត្រ​បញ្ជាក់​កំណើត​របស់​អ្នក​មក​ស្នើសុំ​'}, {item: '- អ្នក​ស្នើសុំ​អាច​មាន​ត្រឹមអត្តសញ្ញាណប័ណ្ណ​ឬ​សេចក្តី​ចម្លង​សំបុត្រ​កំណើត​ ឬ​សេចក្តី​ចម្លង​សំបុត្រ​បញ្ជាក់​កំណើត។​'}]"></div>
+            <si-media sound="Msg2.1.3.2.mp3"></si-media>
+        </ion-content></ion-view>
+    </script>
+
+    <script type="text/ng-template" id="page2_2.html">
+        <ion-view title="ការ​ចេញ​លិខិត​អនុញ្ញាតិ"><ion-content>
+            <a href="#page/page2_2_1.html"><button class="button button-block button-positive">១. លិខិតបញ្ជាក់លើការងារខ្ចីប្រាក់</button></a>
+            <a href="#page/page2_2_2.html"><button class="button button-block button-positive">២. លិខិតបញ្ជាក់ភាពនៅលីវ មេម៉ាយ...</button></a>
+            <a href="#page/page2_2_3.html"><button class="button button-block button-positive">៣. លិខិតបញ្ជាក់ទីលំនៅ</button></a>
+            <a href="#page/page2_2_4.html"><button class="button button-block button-positive">៤. លិខិតបញ្ជាក់លើប្រវតិ្តដីធ្លី</button></a>
+            <a href="#page/page2_2_5.html"><button class="button button-block button-positive">៥. លិខិតបញ្ជាក់ប្រវត្តិរូបសង្ខេប</button></a>
+            <a href="#page/page2_2_6.html"><button class="button button-block button-positive">៦. លិខិតបញ្ជាក់ទិញលក់ សត្វពាហនៈ</button></a>
+            <a href="#page/page2_2_7.html"><button class="button button-block button-positive">៧. លិខិតបញ្ជាក់ផ្សេងៗទៀត</button></a>
+            <br>
+            <si-page sound="Msg2.2.mp3">
+            </si-page>
+        </ion-content></ion-view>
+    </script>
+
+    <script type="text/ng-template" id="page2_2_1.html">
+        <ion-view title="លិខិត​បញ្ជាក់​លើ​ការងារ​ខ្ចី​ប្រាក់"><ion-content padding="true">
+            <div ng-init="content_descs=[{item: 'លិខិត​បញ្ជាក់​លើ​ការងារ​ខ្ចីប្រាក់​ នឹង​ត្រូវ​បង់ថ្លៃ​សេវា​ចំនួន​ ៤០០០​ (៤ពាន់រៀល)​ ក្នុង​១សន្លឹក​ ដែល​មាន​សុពលភាព​រហូត​ដល់​ចប់​កិច្ចសន្យា។​ រយៈ​ពេល​នៃ​ការ​ផ្តល់​សេវា​គឺ​យ៉ាងយូរ​៣ថ្ងៃ​នៃថ្ងៃធ្វើការ។​ ការ​ស្នើសុំ​ត្រូវភ្ជាប់​មក​ជាមួយនូវ៖​'}, {item: '- កិច្ចសន្យា​ខ្ចីប្រាក់​'}]"></div>
+            <si-media sound="Msg2.2.1.mp3"></si-media>
+        </ion-content></ion-view>
+    </script>
+
+    <script type="text/ng-template" id="page2_2_2.html">
+        <ion-view title="លិខិត​បញ្ជាក់​ភាព​នៅ​លីវ មេម៉ាយ ឬ​ពោះម៉ាយ"><ion-content padding="true">
+            <div ng-init="content_descs=[{item: 'លិខិត​បញ្ជាក់​ភាពនៅលីវ​ មេម៉ាយ​ឬពោះម៉ាយ​ នឹង​ត្រូវបង់ថ្លៃ​សេវាចំនួន​១០០០០​ (១ម៉ឺនរៀល)​ ក្នុង១សន្លឹក​ ដែល​មានសុពល​ភាពរយៈពេល​ ៣ខែ​ហើយ​ត្រូវចំណាយ​រយៈពេល​យ៉ាងយូរ​៣ថ្ងៃ​នៃថ្ងៃធ្វើការ។​ ការ​ស្នើសុំ​ត្រូវភ្ជាប់​មកជាមួយនូវ៖​'}, {item: '- បើ​មេម៉ាយ​ឬពោះម៉ាយ​ ដោយប្តីឬ​ ប្រពន្ធស្លាប់​ ត្រូវ​ភ្ជាប់មក​ជាមួយនូវ​សំបុត្រមរណភាព​របស់ប្តី​ឬប្រពន្ធ​ដែល​ស្លាប់​នោះ​ បើលែងលះគ្នា​ត្រូវ​ភ្ជាប់​នូវ​សាលក្រម​តុលាការ។​'}, {item: '- បើ​នៅលីវ​ត្រូវមាន​លិខិត​ស្នើ​សុំបញ្ជាក់​ភាព​នៅលីវ​ដែល​អាចរក​បាន​នៅសាលាឃុំ​ ត្រូវ​ភា្ជប់​ជាមួយនូវ​រូបថត៤x៦​ សន្លឹក​ សេចក្តី​ចម្លង​សំបុត្រ​កំណើត​ឬសៀវភៅ​គ្រួសារ​ ឬអត្តសញ្ញាណប័ណ្ណ​ ហើយ​សាម៉ី​ខ្លួន​ត្រូវបង្ហាញ​ខ្លួន​នៅពេលស្នើសុំ។​ បញ្ជាក់​អ្នក​ស្នើសុំ​ត្រូវ​មានអាយុ​ចាប់ពៅ១៨ឆ្នាំ។​'}]"></div>
+            <si-media sound="Msg2.2.2.mp3"></si-media>
+        </ion-content></ion-view>
+    </script>
+
+    <script type="text/ng-template" id="page2_2_3.html">
+        <ion-view title="លិខិត​បញ្ជាក់​ទីលំនៅ"><ion-content padding="true">
+            <div ng-init="content_descs=[{item: 'លិខិត​បញ្ជាក់​ទីលំនៅ​ នឹង​ត្រូវបង់​ថ្លៃសេវា​ចំនួន​ ៤០០០​ (៤ពាន់រៀល)​ ក្នុង​១ច្បាប់​ ដែល​មាន​សុពលភាព​រយៈពេល​ ៣ខែ។​ រយៈពេល​នៃ​ការ​ផ្តល់​សេវា​គឺយ៉ាងយូរ​៣ថ្ងៃ​នៃថ្ងៃធ្វើការ។​ ការស្នើសុំ​ត្រូវ​ភ្ជាប់​មកជាមួយនូវ៖​'}, {item: '- សៀវភៅ​គ្រួសារ​ '}, {item: '- សៀវភៅ​ស្នាក់នៅ​'}, {item: '- រូបថត​៤x៦ សន្លឹក​'}]"></div>
+            <si-media sound="Msg2.2.3.mp3"></si-media>
+        </ion-content></ion-view>
+    </script>
+
+    <script type="text/ng-template" id="page2_2_4.html">
+        <ion-view title="លិខិត​បញ្ជាក់​លើ​ប្រវត្តិ​ដីធ្លី"><ion-content padding="true">
+            <div ng-init="content_descs=[{item: 'លិខិត​បញ្ជាក់​លើប្រវតិ្តដីធ្លី​ នឹង​ត្រូវបង់ថ្លៃ​សេវា​ចំនួន​ ២០០០០​ (២ម៉ឺនរៀល)​ ក្នុង១សន្លឹក​ ហើយ​រយៈពេល​នៃ​ការផ្តល់​សេវា​គឺ៧ថ្ងៃ​នៃថ្ងៃធ្វើការ។​ ការ​ស្នើសុំ​ត្រូវភ្ជាប់​មក​ជាមួយនូវ៖​'}, {item: '- សៀវភៅ​គ្រួសារ​'}, {item: '- អត្តសញ្ញាណប័ណ្ណ​'}, {item: '- ប័ណ្ណ​កម្មសិទិ្ធ​'}, {item: '- ឯកសារ​កំណត់​ហេតុ​អង្កេត​ដីធ្លី​អាចរកបាន​នៅភូមិឬឃុំ​'}]"></div>
+            <si-media sound="Msg2.2.4.mp3"></si-media>
+        </ion-content></ion-view>
+    </script>
+
+    <script type="text/ng-template" id="page2_2_5.html">
+        <ion-view title="លិខិត​បញ្ជាក់​ប្រវត្តិរូប​សង្ខេប"><ion-content padding="true">
+            <div ng-init="content_descs=[{item: 'លិខិត​បញ្ជាក់​ប្រវត្តិរូប​សង្ខេប​ នឹង​ត្រូវបង់ថ្លៃ​សេវាចំនួន​ ៥០០០​ (៥ពាន់រៀល)​ ក្នុង១សន្លឹក​ លិខិត​នេះមាន​សុពលភាព​រយៈពេល ៣ខែ។​ ហើយ​រយៈពេល​នៃការ​ផ្តល់​សេវាគឺ​ យ៉ាងយូរ​៣ថ្ងៃ​នៃថ្ងៃធ្វើការ។​ ការ​ស្នើសុំ​ត្រូវភ្ជាប់​មកជាមួយនូវ៖​'}, {item: '- សំបុត្រ​កំណើត​ បញ្ជាក់​កំណើត​ ឬអត្តសញ្ញាណប័នណ្ណ​'}, {item: '- រូបថត​៤x៦ ចំនួន១សន្លឹក​'}]"></div>
+            <si-media sound="Msg2.2.5.mp3"></si-media>
+        </ion-content></ion-view>
+    </script>
+
+    <script type="text/ng-template" id="page2_2_6.html">
+        <ion-view title="លិខិត​បញ្ជាក់​ទិញ​លក់​សត្វ​ពាហនៈ"><ion-content padding="true">
+            <div ng-init="content_descs=[{item: 'លិខិត​បញ្ជាក់​លើទិញលក់​ សត្វពាហនៈ​ នឹង​ត្រូវបង់​ថ្លៃសេវា​ចំនួន​ ៣០០០​ (៣ពាន់រៀល)​ ក្នុង១ក្បាល​ លិខិតនេះ​មានសុពលភាព​រយៈពេល​តែ១លើកប៉ុណ្ណោះ។​ ហើយ​រយៈពេល​នៃ​ការផ្តល់​សេវាគឺ​ ៣ថ្ងៃ​នៃថ្ងៃធ្វើការ។​ ការ​ស្នើសុំ​ត្រូវភ្ជាប់​មកជាមួយនូវ៖​ '}, {item: '- លិខិត​លក់ទិញ​'}, {item: '- លិខិត​បញ្ជាក់​ពីពេទ្យសត្វ​ភូមិ​'}]"></div>
+            <si-media sound="Msg2.2.6.mp3"></si-media>
+        </ion-content></ion-view>
+    </script>
+
+    <script type="text/ng-template" id="page2_2_7.html">
+        <ion-view title="លិខិត​បញ្ជាក់​ផ្សេងៗ"><ion-content padding="true">
+            <div ng-init="content_descs=[{item: 'ក្រៅ​ពីសេវា​ខាង​លើ​សូម​ទំនាក់​ទំនងផ្ទាល់​ជាមួយឃុំ​ ហើយ​ត្រូវបង់​ថ្លៃសេវា​ ៥០០០​ រៀលក្នុង១ច្បាប់​'}]"></div>
+            <si-media sound="Msg2.2.7.mp3"></si-media>
+        </ion-content></ion-view>
+    </script>
+
+    <!-- Page 3 -->
+
+    <script type="text/ng-template" id="page3.html">
+        <ion-view title="សេវា​នគរបាល​រដ្ឋបាល​ឃុំ​សង្កាត់"><ion-content>
+            <si-page sound="Msg3.mp3">
+                <a href="#page/page3_1.html"><button class="button button-block button-positive">១. សៀវភៅគ្រួសារ</button></a>
+                <a href="#page/page3_2.html"><button class="button button-block button-positive">២. សៀវភៅស្នាក់នៅ</button></a>
+                <a href="#page/page3_3.html"><button class="button button-block button-positive">៣. អត្តសញ្ញាណបណ័្ណ</button></a>
+            </si-page>
+        </ion-content></ion-view>
+    </script>
+
+    <script type="text/ng-template" id="page3_1.html">
+        <ion-view title="សៀវភៅ​គ្រួសារ"><ion-content padding="true">
+            <div ng-init="content_descs=[{item: 'ការ​ធ្វើ​សៀវភៅ​គ្រួសារ​ នឹង​ត្រូវបង់ថ្លៃ​សេវា​ចំនួន​ ១០០០០​ (១ម៉ឺនរៀល)​ ក្នុង​១ក្បាល​ រយៈពេល​នៃការ​ផ្តល់​សេវាគឺ​ ១៥ថ្ងៃ​នៃថ្ងៃធ្វើការ។​ អ្នក​ស្នើសុំ​ត្រូវភ្ជាប់​ជាមួយនូវ៖​'}, {item: '- ពាក្យ​សុំធ្វើ​សៀវ​ភៅគ្រួសារ​'}, {item: '- សំបុត្រ​អាពាហ៍​ ឬ​សំបុត្របញ្ជាក់​អាពាហ៍ពិពាហ៍​ របស់​មេគ្រួសារ​ '}, {item: '- សំបុត្រ​កំណើត​កូន​ ឬ​សំបុត្រ​បញ្ជាក់​កំណើតកូន​'}]"></div>
+            <si-media sound="Msg3.1.mp3"></si-media>
+        </ion-content></ion-view>
+    </script>
+
+    <script type="text/ng-template" id="page3_2.html">
+        <ion-view title="សៀវភៅ​ស្នាក់នៅ"><ion-content padding="true">
+            <div ng-init="content_descs=[{item: 'ការ​ធ្វើសៀវភៅ​ស្នាក់នៅ​ នឹង​ត្រូវបង់ថ្លៃ​សេវា​ចំនួន​ ១០០០០​ (១ម៉ឺនរៀល)​ ក្នុង១ក្បាល​ រយៈពេល​នៃ​ការ​ផ្តល់សេវា​គឺ ១០ថ្ងៃនៃថ្ងៃ​ធ្វើការ។​ អ្នកស្នើសុំ​ត្រូវ​ភ្ជាប់ជាមួយនូវ៖​'}, {item: '- ពាក្យ​សុំធ្វើ​សៀវភៅ​គ្រួសារ​'}, {item: '- សំបុត្រ​អាពាហ៍ពិពាហ៍​ ឬ​សំបុត្របញ្ជាក់​អាពាហ៍ពិពាហ៍​ របស់​មេគ្រួសារ​ '}, {item: '- សំបុត្រ​កំណើត​កូន​ ឬ​សំបុត្រ​បញ្ជាក់​កំណើតកូន​'}]"></div>
+            <si-media sound="Msg3.2.mp3"></si-media>
+        </ion-content></ion-view>
+    </script>
+
+    <script type="text/ng-template" id="page3_3.html">
+        <ion-view title="អត្តសញ្ញាណបណ្ណ"><ion-content padding="true">
+            <div ng-init="content_descs=[{item: 'ការ​ធ្វើ​អត្តសញ្ញា​ណប័ណ្ណ​ នឹង​ត្រូវបង់ថ្លៃ​សេវា​ចំនួន​ ១០០០០​ (១ម៉ឺនរៀល)​ រយៈពេល​នៃការ​ផ្តល់សេវា​គឺ ៣០ថ្ងៃ​នៃថ្ងៃ​ធ្វើការ។​ អ្នក​ស្នើសុំ​ត្រូវភ្ជាប់​ជាមួយនូវ៖​'}, {item: '- សំបុត្រ​កំណើត​ ឬ​សំបុត្រ​បញ្ជាក់​កំណើត​'}]"></div>
+            <si-media sound="Msg3.3.mp3"></si-media>
+        </ion-content></ion-view>
+    </script>
+
+    <!-- Application core template -->
+    <script type="text/ng-template" id="startup.html">
+        <ion-view title="សូម​ស្វាគមន៍"><ion-content padding="true">
+            <si-page sound="Msg1.mp3"></si-page>
+            <div class="startup-logo">
+                <img height="90" src="img/usaid.jpeg">
+                <img height="70" src="img/development-innovations.jpeg">
+                <img height="90" src="img/open.png">
+                <img height="90" src="img/api.png">
+            </div>
+        </ion-content></ion-view>
+    </script>
+
+    <script type="text/ng-template" id="player.html">
+        <div class="data-wrapper">
+          <ion-content padding="true" direction="y" has-bouncing="true">
+            <p class="content-desc" ng-repeat="content_desc in content_descs" ng-if="$first">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{content_desc.item}}
+            </p>
+            <hr style="width: 80%; border: 1px solid #ccc; margin: 20px auto;">
+            <p class="content-desc" ng-repeat="content_desc in content_descs" ng-if="!$first">
+                {{content_desc.item}}
+            </p>
+          </ion-content>
+        </div>
+
+
+        <!-- <div class="card">
+         </div> -->
+
+        <!-- <div ng-if="hasImage" class="player-image">
+            <img ng-src="img/{{image}}" />
+        </div> -->
+
+        <!-- default image if it is not set -->
+        <!-- <div ng-if="!hasImage" class="no-image player-image">
+            <i class="icon ion-headphone"></i>
+        </div> -->
+
+        <!-- <div class="button-list">
+            <div class="play-pause">
+                <button ng-show="!isPlaying" ng-click="play()" class="button button-clear button-positive"><span class="ion-play"></span></button>
+                <button ng-show="isPlaying" ng-click="pause()" class="button button-clear button-positive"><span class="ion-pause"></span></button>
+            </div>
+            <button ng-click="stop()" class="button button-clear button-assertive"><span class="ion-stop"></span></button>
+        </div> -->
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+{
+  "name": "selfivr2",
+  "version": "1.0.0",
+  "author": "Open Institute",
+  "homepage": "http://open.org.kh",
+  "description": "selfivr2: An Ionic project",
+  "dependencies": {
+    "gulp": "^3.5.6",
+    "gulp-sass": "^0.7.1",
+    "gulp-concat": "^2.2.0",
+    "gulp-minify-css": "^0.3.0",
+    "gulp-rename": "^1.2.0"
+  },
+  "devDependencies": {
+    "bower": "^1.3.3",
+    "gulp-util": "^2.2.14",
+    "shelljs": "^0.3.0",
+    "grunt": "^0.4.5",
+    "grunt-contrib-concat": "^0.5.1",
+    "grunt-contrib-jshint": "^0.11.0",
+    "grunt-contrib-qunit": "^0.5.2",
+    "grunt-contrib-uglify": "^0.8.0",
+    "grunt-contrib-watch": "^0.6.1"
+  },
+  "cordovaPlugins": [
+    "./engine/cordova-crosswalk-engine-c0.6.1",
+    "org.apache.cordova.media",
+    "org.apache.cordova.device",
+    "org.apache.cordova.dialogs",
+    "./engine/cordova-crosswalk-engine-c0.6.2",
+    "http://github.com/VitaliiBlagodir/cordova-plugin-datepicker",
+    "me.apla.cordova.app-preferences",
+    "https://github.com/EddyVerbruggen/Toast-PhoneGap-Plugin.git",
+    "org.apache.cordova.splashscreen"
+  ],
+  "cordovaPlatforms": [
+    "android"
+  ]
+}

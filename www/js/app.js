@@ -216,7 +216,6 @@ function($scope, $timeout, $state, $ionicHistory, $ionicNavBarDelegate, $datetim
 function($scope, $player, $ionicHistory, $interval) {
 
 	$scope.content_descs = null;
-	$scope.playerPage = null;
 
 	$scope.exit = function() {
 		// navigator.app.exitApp();

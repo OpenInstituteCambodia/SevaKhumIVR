@@ -34,6 +34,7 @@
         <ion-nav-view></ion-nav-view>
         <ion-footer-bar class="bar">
 <!--            <a ui-sref="reminder" class="fbutton reminder"><span class="ion-clock"></span></a>-->
+           <a ng-show="isPlayingPage" ng-click="replay()" class="fbutton reminder"><span class="ion-refresh"></span></a>
            <a ng-click="exit()" class="fbutton exit"><span class="ion-power"></span></a>
         </ion-footer-bar>
     </div>
@@ -225,7 +226,7 @@
             <si-page sound="Msg3.mp3">
                 <a href="#page/page3_1.html"><button class="button button-block button-positive">១. សៀវភៅគ្រួសារ</button></a>
                 <a href="#page/page3_2.html"><button class="button button-block button-positive">២. សៀវភៅស្នាក់នៅ</button></a>
-                <a href="#page/page3_3.html"><button class="button button-block button-positive">៣. អត្តសញ្ញាណបណ័្ណ</button></a>
+                <a href="#page/page3_3.html"><button class="button button-block button-positive">៣. អត្តសញ្ញាណប័ណ្ត​</button></a>
             </si-page>
         </ion-content></ion-view>
     </script>
@@ -265,8 +266,11 @@
     </script>
 
     <script type="text/ng-template" id="player.html">
-        <div class="data-wrapper">
+        <div class="data-wrapper" ng-init="isPlayingPage = true">
           <ion-content padding="true" direction="y" has-bouncing="true">
+
+            <ion-refresher pulling-text="ស្ដាប់​ម្ដង​ទៀត​..." on-refresh="replay()"></ion-refresher>
+
             <p class="content-desc" ng-repeat="content_desc in content_descs" ng-if="$first">
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{content_desc.item}}
             </p>
@@ -274,9 +278,8 @@
             <p class="content-desc" ng-repeat="content_desc in content_descs" ng-if="!$first">
                 {{content_desc.item}}
             </p>
-          </ion-content>
+           </ion-content>
         </div>
-
 
         <!-- <div class="card">
          </div> -->
@@ -292,10 +295,9 @@
 
         <!-- <div class="button-list">
             <div class="play-pause">
-                <button ng-show="!isPlaying" ng-click="play()" class="button button-clear button-positive"><span class="ion-play"></span></button>
-                <button ng-show="isPlaying" ng-click="pause()" class="button button-clear button-positive"><span class="ion-pause"></span></button>
+                <button ng-show="!isPlaying" ng-hide="isPlaying" ng-click="play()" class="button button-clear button-positive"><span class="ion-play"></span></button>
+                <button ng-show="isPlaying" ng-hide="!isPlaying" ng-click="stop()" class="button button-clear button-assertive"><span class="ion-stop"></span></button>
             </div>
-            <button ng-click="stop()" class="button button-clear button-assertive"><span class="ion-stop"></span></button>
         </div> -->
     </script>
 

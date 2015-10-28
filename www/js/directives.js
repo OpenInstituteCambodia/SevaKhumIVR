@@ -57,6 +57,14 @@ angular.module('directives', [])
         $player.stop();
         $scope.isPlaying = false;
       };
+
+      $scope.replay = function() {
+        $scope.stop();
+        $scope.play();
+        $timeout(function(){
+          $scope.$broadcast('scroll.refreshComplete');
+        }, 1500);
+      };
     }]
   };
 })

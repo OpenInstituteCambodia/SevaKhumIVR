@@ -85,9 +85,21 @@ function($scope, $timeout, $state, $ionicHistory, $ionicNavBarDelegate, $datetim
         historyRoot: true
     });
 
-    $timeout(function() {
+    var timer = $timeout(function() {
         $state.go('page');
     }, 6000);
+
+		document.addEventListener('pause', function() {
+
+			$timeout.cancel(timer);
+
+		}, false);
+
+		document.addEventListener('resume', function() {
+
+			$state.go('page');
+
+		}, false);
 
 //	var timeout = 5000, pref, ddate, dtime, ndays=3, json, i, list;
 

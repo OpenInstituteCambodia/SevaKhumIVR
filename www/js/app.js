@@ -110,10 +110,6 @@ function($scope, $timeout, $player, $ionicHistory, $interval) {
 
 	$scope.content_descs = null;
 
-	$timeout(function() {
-		$scope.homePage = true;
-	}, 8000);
-
 	$scope.exit = function() {
 		// navigator.app.exitApp();
 		navigator.notification.confirm(

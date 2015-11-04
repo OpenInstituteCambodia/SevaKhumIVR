@@ -26,14 +26,14 @@
 </head>
 <body ng-app="selfivr" ng-controller="MainCtrl" ng-strict-di>
     <!-- Application container -->
-    <div class="app-container" ng-class="style">
+    <div class="app-container" ng-class="style" ng-init="homePage = false">
         <ion-nav-bar class="bar">
             <ion-nav-back-button class="button-clear"></ion-nav-back-button>
             <ion-nav-title></ion-nav-title>
         </ion-nav-bar>
         <ion-nav-view></ion-nav-view>
         <ion-footer-bar class="bar">
-           <a ng-show="isPlayingPage" ng-click="replay()" class="fbutton reminder"><span class="ion-refresh"></span></a>
+           <a href="#/page/" class="fbutton reminder"><span class="ion-home"></span></a>
            <a ng-click="exit()" class="fbutton exit"><span class="ion-power"></span></a>
         </ion-footer-bar>
     </div>

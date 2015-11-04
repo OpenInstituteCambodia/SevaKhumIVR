@@ -101,15 +101,18 @@ function($scope, $timeout, $state, $ionicHistory, $ionicNavBarDelegate, $datetim
 
 		}, false);
 
+
 }])
 
 .controller('MainCtrl',
-['$scope', '$player', '$ionicHistory', '$interval',
-function($scope, $player, $ionicHistory, $interval) {
+['$scope', '$timeout', '$player', '$ionicHistory', '$interval',
+function($scope, $timeout, $player, $ionicHistory, $interval) {
 
 	$scope.content_descs = null;
 
-	$scope.isPlayingPage = false;
+	$timeout(function() {
+		$scope.homePage = true;
+	}, 8000);
 
 	$scope.exit = function() {
 		// navigator.app.exitApp();

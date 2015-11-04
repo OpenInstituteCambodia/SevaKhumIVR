@@ -101,114 +101,6 @@ function($scope, $timeout, $state, $ionicHistory, $ionicNavBarDelegate, $datetim
 
 		}, false);
 
-//	var timeout = 5000, pref, ddate, dtime, ndays=3, json, i, list;
-
-//	var confirm = function() {
-//		var popup = $ionicPopup.show({
-//			template: 'នៅ​ពេល​អ្នក​បើក​កម្មវិធី​នេះ​ដំបូង អ្នក​នឹង​ឃើញ​សារ​មួយ​នេះ ដើម្បី​សួរនាំ​អំពី​ការ​រំឭក។ តើ​អ្នក​ចង់​បើក​កំណត់​ការ​រំឭក​ដែរ​ឬ​ទេ? អ្នក​អាច​បិទ​ឬ​បើក​វា​ពេល​ក្រោយ​បាន​នៅ​ក្នុង​ការ​កំណត់។',
-//		    title: 'កំណត់​ការ​រំឭក​ជា​លើក​ដំបូង',
-//		    subTitle: 'នេះ​បង្ហាញ​តែ​លើក​ដំបូង​ប៉ុណ្ណោះ',
-//		    scope: $scope,
-//		    buttons: [
-//		    {
-//				text: 'មិន​បើក​ទេ',
-//			  	type: 'button-assertive'
-//			},
-//		    {
-//		        text: '<b>សូម​បើក​វា</b>',
-//		        type: 'button-positive',
-//		        onTap: function(e) {
-//		        	return true;
-//		        }
-//		    }
-//		    ]
-//		});
-
-//		return popup;
-//	};
-
-//	// This function checks if it is the first launch.
-//	// It is used as a callbackf function in 'deviceready' event below.
-//	function fetchError(error) {
-//		console.log("Preference is not set.");
-
-//		if($datetime.date.type === 'absolute') {
-//			var d = new Date();
-//			ddate = (d.getMonth() + 1).toString() + '/' + d.getDate().toString() + '/' + d.getFullYear().toString();
-//		} else if($datetime.date.type === 'relative') {
-//			list = $datetime.date.valuelist;
-//			for(i = 0; i < list.length; i++) {
-//				if(list[i].default === true) {
-//					ddate = list[i].value;
-//					break;
-//				}
-//			}
-//		} else {
-//			ddate = $datetime.date.start;
-//			ndays = $datetime.date.ndays;
-//		}
-
-//		switch($datetime.time.type) {
-//			case 'absolute':
-//				dtime = "16:00:00";
-//				break;
-//			case 'relative':
-//				list = $datetime.time.valuelist;
-//				for(i = 0; i < list.length; i++) {
-//					if(list[i].default === true) {
-//						dtime = list[i].value;
-//						break;
-//					}
-//				}
-//				break;
-//			case 'fixed':
-//				dtime = $datetime.time.start;
-//		}
-
-//		if($datetime.type !== "relative") {
-//			confirm().then(function(res) {
-//				if(res) {
-//					json = '{"time": "' + dtime + '", "date": "' + ddate + '", "ndays":'+ ndays +', "link":"/page/", "datetype": "' + $datetime.date.type + '", "timetype": "' + $datetime.time.type + '"}';
-//					pref.store(function success(){}, function error(){}, "selfivr-pref", json);
-//				} else {
-//					pref.store(function success(){}, function error(){}, "selfivr-pref", "no-reminder");
-//				}
-
-//				$timeout(function() {
-//					$state.go('page');
-//				}, 2000);
-//			});
-//		} else {
-//			json = '{"time": "' + dtime + '", "date": "' + ddate + '", "ndays":'+ ndays +', "link":"/page/", "datetype": "' + $datetime.date.type + '", "timetype": "' + $datetime.time.type + '"}';
-//			pref.store(function success(){}, function error(){}, "selfivr-pref", json);
-
-//			$timeout(function() {
-//				$state.go('page');
-//			}, 2000);
-//		}
-//	}
-
-//	function fetchSuccess(value) {
-//		console.log("Preference is already set: " + value);
-
-//		if(AlarmInterface.getURL() === undefined || AlarmInterface.getURL() === null) {
-//			$timeout(function() {
-//				$state.go('page');
-//			}, 2000);
-//		}
-//	}
-
-//	// Make sure Cordova engine has loaded all things.
-//	document.addEventListener('deviceready', function() {
-//		try {
-//			pref = plugins.appPreferences;
-//			pref.fetch(fetchSuccess, fetchError, 'selfivr-pref');
-//		} catch(e) {
-//			console.error("Application preferences does not work in this environment. You should open this page in native mobile application.");
-//		}
-
-//    });
-
 }])
 
 .controller('MainCtrl',
@@ -216,6 +108,8 @@ function($scope, $timeout, $state, $ionicHistory, $ionicNavBarDelegate, $datetim
 function($scope, $player, $ionicHistory, $interval) {
 
 	$scope.content_descs = null;
+
+	$scope.isPlayingPage = false;
 
 	$scope.exit = function() {
 		// navigator.app.exitApp();

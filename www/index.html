@@ -257,10 +257,10 @@
         <ion-view title="សូម​ស្វាគមន៍"><ion-content padding="true">
             <si-page sound="Msg1.mp3"></si-page>
             <div class="startup-logo">
+                <img height="90" src="img/api.png">
                 <img height="90" src="img/usaid.jpeg">
                 <img height="70" src="img/development-innovations.jpeg">
                 <img height="90" src="img/open.png">
-                <img height="90" src="img/api.png">
             </div>
         </ion-content></ion-view>
     </script>
@@ -280,8 +280,7 @@
             </p>
             <div class="button-list">
                 <div class="play-pause">
-                    <button ng-click="replay()" class="button button-clear button-positive"><span class="ion-refresh"></span></button>
-                    ស្ដាប់​ម្ដង​ទៀត​
+                    <button ng-show="!isPlaying" ng-click="replay()" class="button button-clear button-positive"><span class="ion-refresh"></span></button>
                 </div>
             </div>
            </ion-content>

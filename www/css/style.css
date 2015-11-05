@@ -145,6 +145,25 @@ button.button .big-number {
   /*margin: 15px 0;*/
 }
 
+.ctrl-button {
+  bottom: -5px;
+  position: absolute;
+  text-align: center;
+  margin: 0 auto;
+  width: 100%;
+  padding: 5px 0px;
+  background-color: #fff;
+
+}
+
+.ctrl-button .button {
+  padding: 10px 20px 5px 20px;;
+}
+
+.ctrl-button span {
+  font-size: 28px;
+}
+
 .choice-content {
   margin: 0 auto;
   padding: 5px;

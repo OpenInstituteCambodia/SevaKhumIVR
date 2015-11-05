@@ -256,9 +256,9 @@
         <ion-view title="សូម​ស្វាគមន៍"><ion-content padding="true">
             <si-page sound="Msg1.mp3"></si-page>
             <div class="startup-logo">
-                <img height="90" src="img/api.png">
                 <img height="90" src="img/usaid.jpeg">
                 <img height="70" src="img/development-innovations.jpeg">
+                <img height="90" src="img/api.png">
                 <img height="90" src="img/open.png">
             </div>
         </ion-content></ion-view>
@@ -267,8 +267,6 @@
     <script type="text/ng-template" id="player.html">
         <div class="data-wrapper">
           <ion-content padding="true" direction="y" has-bouncing="true">
-
-            <!-- <ion-refresher pulling-text="ស្ដាប់​ម្ដង​ទៀត​..." on-refresh="replay()"></ion-refresher> -->
 
             <p class="content-desc" ng-repeat="content_desc in content_descs" ng-if="$first">
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{content_desc.item}}
@@ -282,7 +280,7 @@
             </p>
            </ion-content>
            <div class="ctrl-button">
-             <button ng-click="replay()" class="button button-assertive"><span class="ion-refresh"></span></button>
+             <button ng-click="replay()" class="button button-positive"><span class="ion-refresh"></span></button>
              <button ng-show="!isPlaying" ng-click="play()" class="button button-light"> <span class="ion-android-volume-up"></button>
              <button ng-show="isPlaying" ng-click="pause()" class="button button-dark"><span class="ion-android-volume-off"></button>
            </div>

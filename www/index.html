@@ -277,7 +277,7 @@
             <p class="content-desc" ng-repeat="content_desc in content_descs" ng-if="!$first && !$last">
                 {{content_desc.item}}
             </p>
-            <p class="content-desc" ng-repeat="content_desc in content_descs" style="padding-bottom: 80px;" ng-if="$last">
+            <p class="content-desc" ng-repeat="content_desc in content_descs" style="padding-bottom: 80px;" ng-if="$last && !$first">
                 {{content_desc.item}}
             </p>
            </ion-content>
@@ -286,12 +286,6 @@
              <button ng-show="!isPlaying" ng-click="play()" class="button button-light"> <span class="ion-android-volume-up"></button>
              <button ng-show="isPlaying" ng-click="pause()" class="button button-dark"><span class="ion-android-volume-off"></button>
            </div>
-
-           <!-- <ion-footer-bar class="bar bar-soundCtrl">
-              <a ng-click="replay()" class="fbutton reminder"><span class="ion-refresh"></span></a>
-              <a ng-show="!isPlaying" ng-click="play()" class="fbutton exit"><span class="ion-android-volume-up"></span></a>
-              <a ng-show="isPlaying" ng-click="pause()" class="fbutton exit"><span class="ion-android-volume-off"></span></a>
-           </ion-footer-bar> -->
         </div>
     </script>
 

@@ -110,20 +110,6 @@ function($scope, $timeout, $player, $ionicHistory, $interval) {
 
 	$scope.content_descs = null;
 
-	$scope.exit = function() {
-		// navigator.app.exitApp();
-		navigator.notification.confirm(
-			'តើ​អ្នក​ពិត​ជា​ចង់​ចាកចេញ​មែន​ទេ?', // message
-			function(buttonIndex) {
-				if (buttonIndex==2){
-					$player.stop();
-					navigator.app.exitApp();
-				}
-			}, // callback function
-			'ចាកចេញ', // title
-			['បោះបង់','មែន'] // buttonLabels
-			);
-	};
 }])
 
 .controller('ReminderCtrl',

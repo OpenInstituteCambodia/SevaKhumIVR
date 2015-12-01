@@ -426,6 +426,27 @@ button.button .big-number {
   position: absolute;
 }
 
+button.fbutton {
+    border: 0;
+    background: none;
+    display: inherit;
+    position: inherit;
+}
+
+.control-button {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 50%;
+    transform: translate( -50%, 0 );
+}
+
+.control-button .button {
+    font-size: 22px;
+    margin-top: 13%;
+}
+
 .reminder {
   left: 25px;
 }

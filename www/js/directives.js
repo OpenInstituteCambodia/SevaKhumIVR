@@ -37,6 +37,10 @@ angular.module('directives', [])
         });
       }, false);
 
+      $scope.hello = function() {
+          alert("Hello");
+      };
+
       $scope.play = function() {
         if(($attrs.sound !== null && $player.current === null)) {
           $player.new($attrs.sound);
@@ -166,7 +170,61 @@ angular.module('directives', [])
       $compile(children.contents())(scope);
     }
   };
-}]);
+}])
+.directive('siFooter', function() {
+    return {
+        restrict: 'E',
+        templateUrl: 'footer.html',
+        scope: {
+            control: '@'
+        },
+        controller: ['$scope', '$player', '$state', '$ionicHistory', function($scope, $player, $state, $ionicHistory) {
+            var current;
+
+            $scope.isMute = false;
+
+            $scope.home = function() {
+                $ionicHistory.nextViewOptions({
+                    historyRoot: true
+                });
+                $state.go('page', { pageId: "" });
+            };
+
+            $scope.replay = function() {
+                current = $player.current;
+                $player.stop();
+                current.seekTo(0);
+                $player.current = current;
+                $player.play();
+            };
+
+            $scope.mute = function() {
+                $scope.isMute = true;
+                $player.current.setVolume(0.0);
+            };
+
+            $scope.unmute = function() {
+                $scope.isMute = false;
+                $player.current.setVolume(1.0);
+            };
+
+            $scope.exit = function() {
+        		// navigator.app.exitApp();
+        		navigator.notification.confirm(
+        			'តើ​អ្នក​ពិត​ជា​ចង់​ចាកចេញ​មែន​ទេ?', // message
+        			function(buttonIndex) {
+        				if (buttonIndex==2){
+        					$player.stop();
+        					navigator.app.exitApp();
+        				}
+        			}, // callback function
+        			'ចាកចេញ', // title
+        			['បោះបង់','មែន'] // buttonLabels
+        			);
+        	};
+        }]
+    };
+});
 
 function getTemplate(style, shape) {
   var templates   = {}; // template list

@@ -24,15 +24,5 @@ function($stateProvider, $urlRouterProvider, $locationProvider) {
 			}
 			return html;
 		}]
-	})
-	.state('reminder', {
-		url: '/reminder',
-		templateUrl: 'reminder.html',
-		controller: 'ReminderCtrl'
-	})
-	.state('alarm', {
-		url: '/alarm',
-		templateUrl: 'alarm.html',
-		controller: 'AlarmCtrl'
 	});
 }]);

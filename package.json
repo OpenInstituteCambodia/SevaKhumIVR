@@ -6,6 +6,10 @@
   "description": "selfivr2: An Ionic project",
   "dependencies": {
     "after-all": "^2.0.2",
+    "cordova-android": "^7.0.0",
+    "cordova-plugin-dialogs": "^2.0.1",
+    "cordova-plugin-file": "^6.0.1",
+    "cordova-plugin-media": "^5.0.2",
     "gulp": "^3.5.6",
     "gulp-concat": "^2.2.0",
     "gulp-minify-css": "^0.3.0",
@@ -28,13 +32,20 @@
     "org.apache.cordova.media",
     "org.apache.cordova.device",
     "org.apache.cordova.dialogs",
-    "./engine/cordova-crosswalk-engine-c0.6.2",
-    "http://github.com/VitaliiBlagodir/cordova-plugin-datepicker",
     "me.apla.cordova.app-preferences",
     "https://github.com/EddyVerbruggen/Toast-PhoneGap-Plugin.git",
     "org.apache.cordova.splashscreen"
   ],
   "cordovaPlatforms": [
     "android"
-  ]
+  ],
+  "cordova": {
+    "platforms": [
+      "android"
+    ],
+    "plugins": {
+      "cordova-plugin-media": {},
+      "cordova-plugin-dialogs": {}
+    }
+  }
 }

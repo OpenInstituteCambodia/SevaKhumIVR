@@ -87,7 +87,7 @@ function($scope, $timeout, $state, $ionicHistory, $ionicNavBarDelegate, $datetim
 
     var timer = $timeout(function() {
         $state.go('page');
-    }, 6000);
+    }, 6500);
 
 		document.addEventListener('pause', function() {
 
